@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<div class="col-sm-4 col-sm-offset-4" style="text-align: center;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Авторизация</h3>
+        </div>
+        <div class="panel-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Имя пользователя</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                </div>
+                {% if login_error %}
+                    <label>{{ login_error }}</label>
+                {% endif %}
+                <button type="submit" class="btn btn-default">Войти</button>
+            </form>
+            <br/>
+            <a href="#"><label>Забыли пароль?</label></a>
+            <br/>
+            <a href="#"><label>Регистрация</label></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

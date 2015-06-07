@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+{% if posts %}
+    {% for post in posts %}
+    <div class="col-sm-4">
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.summary }}</p>
+        <p><a class="btn btn-default" href="{{ post.link }}" role="button">Полная новость &raquo;</a></p>
+    </div>
+    {% endfor %}
+{% else %}
+    <br>
+    <div class="col-sm-6 col-lg-offset-4 alert alert-danger">
+        <p>Не возможно получить новости с сайта Nure.ua, в скором времени они это исправят...</p>
+    </div>
+{% endif %}
+{% endblock %}

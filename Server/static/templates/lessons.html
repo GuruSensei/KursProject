@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <br>
+    <ul class="list-group col-sm-4">
+    {% for lesson in lessons %}
+        <li class="list-group-item">
+            {{ lesson.lessons }}
+            <span class="badge btn btn-success">Подписаться</span>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+{% endblock %}
